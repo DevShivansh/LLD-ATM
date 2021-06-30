@@ -2,6 +2,7 @@ package app.model.money;
 
 import java.time.LocalDateTime;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -26,6 +27,12 @@ public class Card implements UserAtmCard{
 	public void addActions(Action[] values) {
 		
 		actions.addAll(Arrays.stream(values).collect(Collectors.toList()));
+		
+	}
+	
+	public void removeActions(List<Action> values) {
+		
+		actions.removeAll(values);
 		
 	}
 

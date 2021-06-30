@@ -86,6 +86,7 @@ public class Atm implements PublicAtm{
 	public void endTransaction() {
 		activeTransaction.end();
 		activeTransaction = null;
+		activeCard.removeActions(Action.validCardActions());
 		activeCard = null;
 	}
 	
